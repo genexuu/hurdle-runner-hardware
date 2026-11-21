@@ -31,7 +31,7 @@ The course report and demonstration footage provided the reference for the Blend
 | Buzzer | 1 | The standalone music sketch plays *Jingle Bells* using `tone()` on `P3_5`. |
 | Solderless breadboard | 1 | Holds the peripherals and provides connection points. |
 | Fixed resistor | At least 1 | One is visible beside the buzzer. Its resistance is unconfirmed. |
-| LCD contrast potentiometer | 1 in the schematic | Adjusts LCD contrast. Its presence on the assembled board and its resistance are unconfirmed. |
+| LCD adjustment potentiometer (variable resistor) | 1 | Moving the wiper makes the characters appear lighter or darker. The circuit diagram shows the wiper connected to LCD pin 3 (V0), which sets character contrast. The resistance value is unknown. |
 | Jumper wires | Multiple | Connect the modules. The photos do not establish an exact count. |
 
 The LCD sketch passes these six signals to the `LiquidCrystal` constructor, in this order.
