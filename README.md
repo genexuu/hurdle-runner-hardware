@@ -23,13 +23,16 @@ To explore the model, open the scene in Blender 4.5.3 LTS and press **Space**. T
 
 The course report and demonstration footage provided the reference for the Blender model. Board geometry, jumper routing and separation distances are simplified for visibility. Use the original circuit diagram and board documentation when wiring the hardware.
 
-| Component | Function and connections |
-| --- | --- |
-| TI microcontroller development board | Reads the controls and drives the peripherals. The prototype photo shows the Texas Instruments logo. The exact board model is unconfirmed. |
-| Analog joystick with push switch | The sketch reads the horizontal axis on `A8`. The report labels that connection `P4_4`. Pressing the switch on `P4_7` triggers a falling-edge interrupt using the internal pull-up. |
-| 1602A character LCD | Displays the runner and hurdles as custom glyphs. The two rows represent the ground and the space above it. |
-| Buzzer | The standalone music sketch plays *Jingle Bells* using `tone()` on `P3_5`. |
-| Breadboard and passives | The photo shows jumper wires and a resistor. The LCD schematic also shows a contrast potentiometer without a resistance value. |
+| Component | Quantity | Function and connections |
+| --- | --- | --- |
+| TI microcontroller development board | 1 | Reads the controls and drives the peripherals. The prototype photo shows the Texas Instruments logo. The exact board model is unconfirmed. |
+| Analog joystick with push switch | 1 | The sketch reads the horizontal axis on `A8`. The report labels that connection `P4_4`. Pressing the switch on `P4_7` triggers a falling-edge interrupt using the internal pull-up. |
+| 1602A character LCD | 1 | Displays the runner and hurdles as custom glyphs. The two rows represent the ground and the space above it. |
+| Buzzer | 1 | The standalone music sketch plays *Jingle Bells* using `tone()` on `P3_5`. |
+| Solderless breadboard | 1 | Holds the peripherals and provides connection points. |
+| Fixed resistor | At least 1 | One is visible beside the buzzer. Its resistance is unconfirmed. |
+| LCD contrast potentiometer | 1 in the schematic | Adjusts LCD contrast. Its presence on the assembled board and its resistance are unconfirmed. |
+| Jumper wires | Multiple | Connect the modules. The photos do not establish an exact count. |
 
 The LCD sketch passes these six signals to the `LiquidCrystal` constructor, in this order.
 
@@ -38,6 +41,8 @@ The LCD sketch passes these six signals to the `LiquidCrystal` constructor, in t
 | Controller pin | P6_7 | P2_3 | P2_6 | P2_4 | P5_6 | P6_6 |
 
 ## Firmware
+
+**Development environment:** Energia IDE for TI microcontrollers. The exact development board model remains unconfirmed. [TI Energia overview](https://www.ti.com/tool/ENERGIA)
 
 | Original sketch | Behavior |
 | --- | --- |
