@@ -4,18 +4,20 @@ A breadboard arcade game built for ECE 233, Module 3. Push the joystick left or 
 
 ![Blender animation showing the jumper wires, LCD, joystick, buzzer and controller lifting off the breadboard and returning to their positions](media/preview.gif)
 
-[Watch the 18-second animation in 720p](media/assembly.mp4) · [Download the editable Blender scene](hurdle-runner.blend) · [View the exploded assembly](media/exploded.jpg)
+[Watch the 20-second animation in 720p](media/assembly.mp4) · [Download the editable Blender scene](hurdle-runner.blend) · [View the exploded assembly](media/exploded.jpg)
 
 ## Assembly sequence
 
 | Time | What to look for |
 | --- | --- |
 | 0–3.7 s | The camera turns toward the assembled board as the jumper wires lift clear. |
-| 3.7–8 s | The LCD tilts up and the joystick cap lifts to reveal its shaft. |
-| 8–11.6 s | The buzzer, resistor and controller separate from the breadboard assembly. |
-| 11.6–18 s | The camera orbits the exploded assembly. The modules return to position and the jumpers reconnect. |
+| 3.7–6 s | The LCD tilts up to expose its header. |
+| 6–8 s | The wiper moves across the LCD potentiometer and the characters change contrast. The module then lifts from the breadboard. |
+| 8–10 s | The joystick cap lifts to reveal its shaft. |
+| 10–13.6 s | The buzzer, resistor and controller separate from the breadboard assembly. |
+| 13.6–20 s | The camera orbits the exploded assembly. The modules return to position and the jumpers reconnect. |
 
-To explore the model, open the scene in Blender 4.5.3 LTS and press **Space**. The timeline markers identify each step across frames 1–360 at 20 fps. In the Outliner, expand a numbered collection and select its parent object named **motion** to reposition the module. Select an individual part to edit its geometry or material. **Numpad 0** toggles the camera view. The exported video adds English captions and labels that track moving parts.
+To explore the model, open the scene in Blender 4.5.3 LTS and press **Space**. The timeline markers identify each step across frames 1–400 at 20 fps. In the Outliner, expand a numbered collection and select its parent object named **motion** to reposition the module. Select an individual part to edit its geometry or material. **Numpad 0** toggles the camera view. The exported video adds English captions and labels that track moving parts.
 
 ## Hardware
 
@@ -30,8 +32,8 @@ The course report and demonstration footage provided the reference for the Blend
 | 1602A character LCD | 1 | Displays the runner and hurdles as custom glyphs. The two rows represent the ground and the space above it. |
 | Buzzer | 1 | The standalone music sketch plays *Jingle Bells* using `tone()` on `P3_5`. |
 | Solderless breadboard | 1 | Holds the peripherals and provides connection points. |
-| Fixed resistor | At least 1 | One is visible beside the buzzer. Its resistance is unconfirmed. |
-| LCD adjustment potentiometer (variable resistor) | 1 | Moving the wiper makes the characters appear lighter or darker. The circuit diagram shows the wiper connected to LCD pin 3 (V0), which sets character contrast. The resistance value is unknown. |
+| Fixed resistor | 1 | Located beside the buzzer. Its resistance value is unknown. |
+| LCD adjustment potentiometer (variable resistor) | 1 | Moving the wiper makes the characters appear lighter or darker. The circuit diagram shows the wiper connected to LCD pin 3 (V0), which sets character contrast. The model uses a three-terminal slide control to illustrate the adjustment. The physical package and resistance value are unconfirmed. |
 | Jumper wires | Multiple | Connect the modules. The photos do not establish an exact count. |
 
 The LCD sketch passes these six signals to the `LiquidCrystal` constructor, in this order.
